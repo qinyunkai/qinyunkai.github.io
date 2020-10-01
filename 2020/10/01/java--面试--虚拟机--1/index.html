@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JVM虚拟机学习笔记 | kandy</title><meta name="description" content="java基础知识点笔记"><meta name="keywords" content="笔记"><meta name="author" content="Andy,qinxiaohou007@163.com"><meta name="copyright" content="Andy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://kandy.love/2020/10/01/java--%E9%9D%A2%E8%AF%95--%E8%99%9A%E6%8B%9F%E6%9C%BA--1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="JVM虚拟机学习笔记"><meta property="og:url" content="http://kandy.love/2020/10/01/java--%E9%9D%A2%E8%AF%95--%E8%99%9A%E6%8B%9F%E6%9C%BA--1/"><meta property="og:site_name" content="kandy"><meta property="og:description" content="java基础知识点笔记"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/codeBlog/place-of-work-women-3346613_1920.jpg"><meta property="article:published_time" content="2020-09-30T16:00:00.000Z"><meta property="article:modified_time" content="2020-10-01T11:51:07.868Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.1.1',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime: '天',
+  date_suffix: {"one_hour":"刚刚","hours":"小时前","day":"天前"},
+  copyright: undefined,
+  ClickShowText: {"text":"锅锅,爱吃,肉肉,打呼噜的肉肉","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+    },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-10-01 19:51:07'
+}</script><noscript><style type="text/css">
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><meta name="generator" content="Hexo 5.1.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">8</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">4</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 休闲</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0"><span class="toc-number">1.</span> <span class="toc-text">Java的跨平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JVM%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">JVM的结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%88"><span class="toc-number">2.1.</span> <span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%88%E5%B8%A7"><span class="toc-number">2.1.1.</span> <span class="toc-text">栈帧</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%99%E4%B8%AA%E6%A0%88%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E6%A0%88%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB%EF%BC%9F"><span class="toc-number">2.1.2.</span> <span class="toc-text">这个栈和数据结构的栈有什么关系？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%88%E5%B8%A7%E7%9A%84%E7%BB%93%E6%9E%84-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E8%A1%A8%E5%92%8C%E6%93%8D%E4%BD%9C%E6%95%B0%E6%A0%88"><span class="toc-number">2.1.3.</span> <span class="toc-text">栈帧的结构-局部变量表和操作数栈</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">2.1.4.</span> <span class="toc-text">动态链接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%87%BA%E5%8F%A3"><span class="toc-number">2.1.5.</span> <span class="toc-text">方法出口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E4%B8%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E8%A1%A8"><span class="toc-number">2.1.6.</span> <span class="toc-text">局部变量为对象的局部变量表</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="toc-number">2.2.</span> <span class="toc-text">程序计数器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8%EF%BC%9F"><span class="toc-number">2.2.1.</span> <span class="toc-text">为什么要有程序计数器？</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%8C%BA"><span class="toc-number">2.3.</span> <span class="toc-text">方法区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%96%B9%E6%B3%95%E6%A0%88"><span class="toc-number">2.4.</span> <span class="toc-text">本地方法栈</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#ps"><span class="toc-number">2.4.1.</span> <span class="toc-text">ps</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A0%86"><span class="toc-number">2.5.</span> <span class="toc-text">堆</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%AF%E8%BE%BE%E6%80%A7%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95"><span class="toc-number">2.5.1.</span> <span class="toc-text">可达性分析算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E4%BB%A3%E5%B9%B4%E9%BE%84%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">2.5.2.</span> <span class="toc-text">分代年龄的作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%9D%E8%80%83"><span class="toc-number">2.5.3.</span> <span class="toc-text">思考</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#minor-gc%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-number">2.5.4.</span> <span class="toc-text">minor gc测试代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#full-gc"><span class="toc-number">2.5.5.</span> <span class="toc-text">full gc</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JVM%E8%B0%83%E4%BC%98"><span class="toc-number">3.</span> <span class="toc-text">JVM调优</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#STW%EF%BC%88stop-the-world%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">STW（stop the world）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AE%BE%E8%AE%A1STW%EF%BC%9F%EF%BC%88%E9%98%BF%E9%87%8C%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">为什么设计STW？（阿里面试题）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JVM%E8%B0%83%E4%BC%98%E5%AE%9E%E4%BE%8B%E5%88%86%E6%9E%90"><span class="toc-number">3.3.</span> <span class="toc-text">JVM调优实例分析</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%98%E5%8C%96"><span class="toc-number">3.3.1.</span> <span class="toc-text">优化</span></a></li></ol></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/qinyunkai/picbed/codeBlog/cubes-2492010_1920.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">kandy</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 休闲</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">JVM虚拟机学习笔记</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-30T16:00:00.000Z" title="发表于 2020-10-01 00:00:00">2020-10-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-10-01T11:51:07.868Z" title="更新于 2020-10-01 19:51:07">2020-10-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h3 id="Java的跨平台"><a href="#Java的跨平台" class="headerlink" title="Java的跨平台"></a>Java的跨平台</h3><p>我们应该都写过这样一个类，HelloWorld.java，这个java文件会被Javac命令编译成.class文件，然后被java命令丢到虚拟机里面去运行。我们的程序最后会被翻译成机器码，类似于001100这种二进制编码，才能被计算机所识别，但是不同平台（系统）生成的可执行的机器码是不一样的。比如在windows下会被翻译成0011，在linux系统下可能会被翻译成1111。也就是说，我们要想在不同平台达到相同的功能或者目的，就要针对平台（系统）进行编码，也就是说，换一个平台，我们就要重新写一次代码。但是事实是，不管在哪个系统上运行，我们只需要进行一次编码，就能在各个平台上运行。那我们如何实现跨平台，实现一次编码到处运行呢？解决方法就是JDK。我们再初学Java的时候都会去Oracle官网下载JDK，我们下载的时候会发现，有很多版本的JDK，windows的，linux的等等很多版本，不同版本的JDK底层有基于这个特定的操作系统平台实现好的JVM，这样我们在不同系统运行java代码就相当于在不同的版本的JVM里运行代码。不同版本的JVM可以帮我们生成特定操作系统的那个机器码。JVM从软件层面屏蔽不同操作系统在底层硬件和指令上的区别。Java的跨平台主要就是靠不同版本的JVM去做的。</p>
+<h3 id="JVM的结构"><a href="#JVM的结构" class="headerlink" title="JVM的结构"></a>JVM的结构</h3><p><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20200930204001.png"></p>
+<p>JVM大致分为三个部分，类装载子系统、运行时数据区、字节码执行引擎。java Math.class这行代码开始执行后，会先进入类装载子系统，然后被装载到第二块子系统运行时数据区，最终由字节码执行引擎运行数据区的代码。</p>
+<h4 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h4><p>栈空间放的是局部变量、临时变量等，官方习惯把栈叫做虚拟栈，我更喜欢叫线程栈，是每一个线程运行的时候Java虚拟机会给这个线程分配一块独立的内存空间。我们运行Main方法的时候其实是有一个主线程的。<img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20200930222052.png"></p>
+<p>比如main方法里有一个变量math，执行到math.compute后，又出现compute方法里的一系列变量。变量也是数据肯定是需要空间去存放的，主线程一开始运行，虚拟机马上就会给线程分配一个独立的栈内存空间，用来满足这些程序在运行过程中他的一些局部变量需要的内存空间。</p>
+<p>当main线程开始运行，虚拟机会从Java进程这一大块栈内存空间从中挖一小块分配给主线程，放主线程运行期间产生的那些局部变量。如果这个时候还有其他线程加入进来，比如线程2，虚拟机还是从那一大块栈内存空间挖出来一块分配给线程2，以此类推。</p>
+<h5 id="栈帧"><a href="#栈帧" class="headerlink" title="栈帧"></a>栈帧</h5><p>栈内部其实还有一些组成结构。比如栈帧。还是上图的例子，当主线程开启时，虚拟机就会立即给主线程分配一块独立的占内存空间，当main方法开始运行时，虚拟机会给main方法在主线程的栈内存空间中分配一块独立的专属于main方法的内存空间，用来存放main方法中的局部变量。当运行大compute方法时，又会给compute方法在主线程的栈内存空间中分配一块独立的专属于compute方法的内存空间，用来存放compute方法中的局部变量。局部变量只在方法的运行期间内有效，java虚拟机为了区分不同方法中的局部变量的寿命或者说是作用时间，给每一个方法都分配了一块独立的内存空间。这个内存空间，我们就把它叫做栈帧内存空间。</p>
+<h5 id="这个栈和数据结构的栈有什么关系？"><a href="#这个栈和数据结构的栈有什么关系？" class="headerlink" title="这个栈和数据结构的栈有什么关系？"></a>这个栈和数据结构的栈有什么关系？</h5><p><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/124324.jpg"></p>
+<p>数据结构中的栈的特点就是，first in last out，先进后出。实际上我们这一块独立的属于main线程的栈内存空间里面存放栈帧的数据结构，就是数据结构中的栈。main线程先运行到main方法，会给main方法分配栈帧，当运行到math.compute这行代码，又会给compute方法分配栈帧，这行代码结束后，compute方法的栈帧就会被销毁，接着继续运行main方法里的代码。最后main方法结束时，也会被销毁。main先被加载，最后被释放。也就是说我们栈空间存放栈帧的这种数据结构，就是栈。</p>
+<h5 id="栈帧的结构-局部变量表和操作数栈"><a href="#栈帧的结构-局部变量表和操作数栈" class="headerlink" title="栈帧的结构-局部变量表和操作数栈"></a>栈帧的结构-局部变量表和操作数栈</h5><p><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001103411.png"></p>
+<p>栈帧里面其实并不只是存放局部变量。我们打开math.class字节码文件是这样子的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001103725.png"></p>
+<p>这并不是乱码，这里面每一个字符串在ORacle官网都有对应的手册。我们可以用javap命令 对这个class文件进行反编译并输出为txt文件方便查看  javap    -c   Math.class  &gt;  Math.txt</p>
+<p>反编译后的代码可读性会比class文件高一些。<img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001104129.png"></p>
+<p>原始的compute方法只有四行简单代码，将class文件反编译后却有了12行，因为这是更底层的语言，因为语言越底层，代码就会越“碎”，代码的原子性就更强。我们并不需要读懂，只要能根据代码在JVM指令手册查找，并理解其意义就可以。以compute方法为例。iconst_1的意思就是<img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001104845.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001105329.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001105745.png"></p>
+<p>iconst_1就是将int型常量1压入操作数栈，istore_1会把刚才压入的常量1从操作数栈里面弹出来，赋值给局部变量a，局部变量表这块内存空间相当于数组，局部变量1代表的就是a（局部变量0代表的是this）。b的赋值操作也是如此。</p>
+<p>iload_1意思是从局部变量1中装载int类型值，会将a=1的值1压入操作数栈，接下来iload_2会将b=2的值2压入操作数栈。接着iadd，会将2从操作数栈弹出，再将1从操作数栈弹出，将他们相加得3，再将3压入操作数栈。接着bipush 10，会将10压入操作数栈。然后imul，会将10弹出操作数栈，再将3弹出操作数栈，将他们相乘得30，将30压入操作数栈，接着istore_3，会在局部变量表中给c分配内存空间，然后会将30弹出栈，赋值给局部变量表中的变量c，接着iload_3，会将c的值30压入操作数栈，然后ireturn，将30返回给主方法。</p>
+<p>操作数栈，就是运算过程中，存储临时运算结果的地方。</p>
+<h5 id="动态链接"><a href="#动态链接" class="headerlink" title="动态链接"></a>动态链接</h5><p>比如程序运行到math.compute，接下来需要知道compute方法的这些代码的位置在哪里，才能接着运算。compute方法的动态链接就是，compute方法被加载到方法区时，compute方法对应的入口的内存地址。根据这个地址就能找到compute方法的代码在哪里。这个地址就是放在动态链接里面的。</p>
+<h5 id="方法出口"><a href="#方法出口" class="headerlink" title="方法出口"></a>方法出口</h5><p>在compute方法调用完成后，要继续返回到main方法执行代码，那这个时候去执行main方法的哪个位置的代码？总不能从头开始执行。在调用compute方法的时候，就把要返回的位置放到了方法出口里。这样调用compute方法结束后，就知道从main方法代码的哪个位置继续执行。也可以认为返回值也放在这里面了。</p>
+<h5 id="局部变量为对象的局部变量表"><a href="#局部变量为对象的局部变量表" class="headerlink" title="局部变量为对象的局部变量表"></a>局部变量为对象的局部变量表</h5><p>main方法中的局部变量math是一个对象。这个对象的详细数据放在堆里，那么在main方法的局部变量表里，存放的是math对象的引用，也就是math对象在堆里的内存地址，根据这个地址可以定位到math对象在堆里的位置。</p>
+<h4 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h4><p>程序计数器是每个线程专享的，独有的。和我们的线程栈一样，只要一个线程开始运行，虚拟机就会给这个线程分配一个独立的程序计数器内存空间。会从整个一大块的程序计数器里面，抠出来一小块分配给线程，用来记录我们当前线程正在运行的那一行代码的位置。不同线程运行的代码肯定不一样，位置也不一样。当然需要自己专属的内存空间存储自己的正在运行的代码位置。刚才反编译中的 0：iconst_1 ，这个0，就代表这行代码的位置标识。<img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001112905.png"></p>
+<p>我们的程序计数器内存空间的位置是由谁更改的呢？<img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001143332.png"></p>
+<p>class文件被类的子装载系统装载到虚拟机内存模型中的方法区，代码被字节码执行引擎去执行的，这个引擎每执行一行代码，就会动态修改这个程序计数器内存空间的代码位置标识。</p>
+<h5 id="为什么要有程序计数器？"><a href="#为什么要有程序计数器？" class="headerlink" title="为什么要有程序计数器？"></a>为什么要有程序计数器？</h5><p>我们的java是多线程的，比如，线程1正在执行自己的代码，这个时候线程2过来了，优先级更高，那么线程1就要先挂起来，线程2获得CPU的执行权去运行自己的代码。当线程2运行结束时，线程1继续运行自己的代码。但是从哪一行代码开始运行呢？这个时候我们就需要记录线程1挂起前运行代码的位置。有了这个位置，就能直接从挂起的地方继续运行。这就是程序计数器的作用。</p>
+<h4 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h4><p>在1.8之前叫做永久代。在1.8之后包括1.8叫元空间。<img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001150126.png"></p>
+<p>方法区简单的说存放的是，常量、静态变量、类信息。对于Math类中的静态变量user，也是存放在方法区，但是user对象的具体数据还是存放在堆里，所以方法区的静态变量user实际上存放的是user这个对象在堆内存里的内存地址。</p>
+<h4 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h4><p>我们要先知道什么是本地方法。用native修饰的方法就是本地方法，线程里的start方法其实就是本地方法。是用C或者C++语言实现的。</p>
+<p>本地方法栈就是本地方法在执行过程中需要的内存空间。如果一个线程在执行过程中调用到了本地方法，这些本地方法也是需要空间去存放数据的。</p>
+<h5 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h5><blockquote>
+<p>在上图中，栈、本地方法栈和程序计数器颜色是相同的，堆和方法区颜色是相同的。是为了表达：</p>
+<p>栈、本地方法栈、程序计数器都是线程私有的，各自有各自的。但是堆和方法区是共有的。因为多个线程可能会用同一个方法和对象。</p>
+</blockquote>
+<h4 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h4><p><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001154701.png"></p>
+<p>加入我们程序是24小时不停的运行的，我们new出来的对象都会往伊甸园区（Eden space）放，当伊甸园区被填满的时候，再过来对象就放不下了。这时候虚拟机（字节码执行引擎）就会后台开启一个线程专门运行minor gc，进行垃圾清理。从而腾出来新的堆空间。</p>
+<h5 id="可达性分析算法"><a href="#可达性分析算法" class="headerlink" title="可达性分析算法"></a>可达性分析算法</h5><p><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001155709.png"></p>
+<p>Math类中的局部变量math，静态变量user等都可以作为GC Roots，可达性分析算法就是，从GC Roots开始，比如math，如果math里面有成员变量引用了其他对象，就继续往下找，一直找到这个对象里没有引用其他任何对象为止。从开始到结束找到的这一串对象都会被标记为非垃圾对象。并被复制到空着的survivor区的s0里，然后把伊甸园区里面的这些对象清理，腾出空间。如果堆里的对象没有任何引用能找到他们，那他们就会被标记为垃圾对象被清理。对象如果经历一次minor gc没有被干掉，它的分代年龄就会被加1，程序继续运行，伊甸园区再次被充满，再次出发minor gc，这次gc不仅仅回收伊甸园区，同样会回收survivor区里面的非空s0区，使用的算法还是可达性分析算法。这次没有被干掉的对象会被复制到survivor区的s1区，分代年龄再加1，并且清理掉伊甸园区和survivor的s0区。</p>
+<h5 id="分代年龄的作用"><a href="#分代年龄的作用" class="headerlink" title="分代年龄的作用"></a>分代年龄的作用</h5><p><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001161232.png"></p>
+<p>一个对象不是只有几个成员变量和方法那么简单，除了这些实例数据，还会有对象头数据（Object Header），分代年龄就在Mark Word标记字段里。接着上面的清理分析。这时候伊甸园区又满了，同样会进行minor gc，这次回收伊甸园区和survivor区的s1区，会把没被干掉的对象复制到survivor区的s0区，并且分代年龄加1。会发现命长的对象在经历minor gc的过程中一直在survivor区的两个区来回跳。当对象的分代年龄累积到15，这个对象就会被认为是长寿对象，会被转移到老年代区。</p>
+<h5 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h5><blockquote>
+<p>对于一个web系统，会被放入老年区的有哪些对象？</p>
+<p>有自己做的缓存对象，静态变量引用的对象，数据库连接池涉及的对象。spring容器的bean对象也会一直存活着，一般会被放到老年代。</p>
+</blockquote>
+<h5 id="minor-gc测试代码"><a href="#minor-gc测试代码" class="headerlink" title="minor gc测试代码"></a>minor gc测试代码</h5><p><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001163630.png"></p>
+<p>做一个死循环不断往ArrayList里放新new出来的对象，会触发minor gc，新new出来的对象不会被回收，因为被ArrayList类型的heapTests变量引用着，运行这段代码。在windows命令行输入jvisualvm 打开调优工具（这是JDK自带的）。<img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001164847.png"><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001165001.png"><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001164627.png">随着时间推移，老年区一直在增加，survivor的两个区交替清空。老年区增量并不是每一次都一样，第一种可能是gc过程中，survivor区的某个区放不下，会将放不下的放入老年区。第二种是有一批分代年龄到15的对象，被放入老年区。</p>
+<h5 id="full-gc"><a href="#full-gc" class="headerlink" title="full gc"></a>full gc</h5><p>当老年区放不下，就会进行full gc ，会对所有区（伊甸园区，survivor区，老年区）进行回收，但是我们这个例子，即使回收老年区也没用，因为所有对象都在被引用，所以这时候就会导致OOM内存溢出。</p>
+<h3 id="JVM调优"><a href="#JVM调优" class="headerlink" title="JVM调优"></a>JVM调优</h3><h4 id="STW（stop-the-world）"><a href="#STW（stop-the-world）" class="headerlink" title="STW（stop the world）"></a>STW（stop the world）</h4><p>每次gc都会触发STW，STW就是停止其他的线程，专心做gc，这个时候应用就会卡顿一下，minor gc触发的STW时间比较短，而full gc时间比较长。优化就是为了减少STW的次数。</p>
+<h4 id="为什么设计STW？（阿里面试题）"><a href="#为什么设计STW？（阿里面试题）" class="headerlink" title="为什么设计STW？（阿里面试题）"></a>为什么设计STW？（阿里面试题）</h4><p>如果gc和其他线程同时进行的话，可以设想这样一个场景。gc刚刚搜索了一串对象并标记为非垃圾对象，这个时候其他线程继续运行导致刚才那串对象变成了垃圾对象，那这个时候gc总不能回头再重新对那串对象进行gc操作，如果这样那gc什么时候才能停止呢？只要其他线程运行，就势必会改变对象的状态。这会对gc工作造成很大困扰，索性就加上STW机制，进行gc的时候停止其他线程。专一进行gc回收</p>
+<h4 id="JVM调优实例分析"><a href="#JVM调优实例分析" class="headerlink" title="JVM调优实例分析"></a>JVM调优实例分析</h4><p><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001184926.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001185051.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/note/20201001185350.png"></p>
+<p>按照上面分析，伊甸园区14秒就会被放满，按照分析，60M对象一秒后都会变成垃圾对象，所以gc时候会回收伊甸园区所有对象，但是有一种可能，gc触发时，同时触发STW，这个时候如果业务线程进行到一半，还没运行完，那么这个线程产生的数据被引用着，就会被认定非垃圾对象，会将60M对象数据放入s0，根据策略，过大对象数据会被直接放入到老年代（大于s0或s1最大空间一半），那么这60M对象数据会被直接放入到老年代。这样几十秒老年代就会被填满，进行一个full gc，触发STW（这个时间会比较长），会严重影响用户体验。而且老年代里面的60M数据都会被清理掉，因为他们过一秒都会变成垃圾对象。</p>
+<h5 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h5><p>能否对JVM进行优化，使其几乎不发生full gc？</p>
+<p>将新生代内存空间加大，比如2G，按照8:1:1,伊甸园区分配1.6G，s0s1各200M。这样伊甸园区被充满时间延长一倍到27秒，大大减少minor gc频率。如果按照每次触发minor gc时产生的最后60M对象都为非垃圾对象来设想，那么这60M对象小于s0或者是s1内存空间的一半，不会被放入老年代。会被放入s0或者是s1。下一次触发minor gc，已经过了二十多秒，survivor区的对象也变成垃圾了，会被清空。这样就几乎不会忘老年代添加对象，也就很少触发full gc</p>
+<p>想这种很快会变成垃圾对象的数据，不适合放入老年代，尽可能的让他在新生代就被minor gc 给他干掉。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:qinxiaohou007@163.com">Andy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://kandy.love/2020/10/01/java--%E9%9D%A2%E8%AF%95--%E8%99%9A%E6%8B%9F%E6%9C%BA--1/">http://kandy.love/2020/10/01/java--%E9%9D%A2%E8%AF%95--%E8%99%9A%E6%8B%9F%E6%9C%BA--1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://kandy.love" target="_blank">kandy</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/codeBlog/place-of-work-women-3346613_1920.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/09/28/kandy%E6%83%85%E4%B9%A6--2--%E9%94%85%E9%94%85/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/qinyunkai/picbed/kandy/a92aab61dba276cca5904d3d96f546e.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">致我亲爱的宝贝</div></div></a></div></nav></article></main><footer id="footer" style="background-image: url(https://cdn.jsdelivr.net/gh/qinyunkai/picbed/codeBlog/cubes-2492010_1920.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By Andy</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://kandy.love/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="ribbon_piao" mobile="true" src="/js/third-party/piao.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="/js/third-party/ClickShowText.js" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>
