@@ -1,0 +1,1288 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="temp, Hexo">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>temp | Hexo</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Hexo</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Hexo</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">temp</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Jesus/">
+                                <span class="chip bg-color">Jesus</span>
+                            </a>
+                        
+                            <a href="/tags/sermons/">
+                                <span class="chip bg-color">sermons</span>
+                            </a>
+                        
+                            <a href="/tags/Paul/">
+                                <span class="chip bg-color">Paul</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-05-16
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="仁义的果子"><a href="#仁义的果子" class="headerlink" title="仁义的果子"></a>仁义的果子</h1><h2 id="主题经文"><a href="#主题经文" class="headerlink" title="主题经文"></a>主题经文</h2><p><strong>【腓立比书 1:9】我所祷告的，就是要你们的爱心在知识和各样见识上多而又多，</strong></p>
+<p><strong>【腓立比书 1:10】使你们能分别是非，作诚实无过的人，直到基督的日子；</strong></p>
+<p><strong>【腓立比书 1:11】并靠着耶稣基督结满了仁义的果子，叫荣耀称赞归与　神。</strong></p>
+<h2 id="写作背景"><a href="#写作背景" class="headerlink" title="写作背景"></a>写作背景</h2><p>亲爱的父老弟兄姊妹，我们知道圣经分为新旧约，旧约有39卷书，新约有27卷书，整本圣经一共66卷书。<strong>【提摩太后书 3:16】圣经都是　神所默示的，于教训、督责、使人归正、教导人学义都是有益的，</strong>圣经正是神所默示的，尽管每卷书都有自己的作者，有的作者甚至已经无法考察到底是谁，但是这并不是说圣经是出于人的，也不能说明是出于人的思想的，更不是综合古代文明的智慧，而是什么呢？是神将祂的话语藉着圣灵放在作者里面，然后再由不同的作者，以自己不同的风格写了出来，圣经的每一句都是神的话，这是毋庸置疑的，都是神直接告诉我们的。那在我们学习一卷书之前，我们要先了解这卷书的写作背景</p>
+<p>什么是写作背景？第一个是作者（作者的经历、作者的性格、作者对信仰的态度，以及当时在什么背景或者环境下写的这卷书）、第二个写作时间和地点、受书人（就是这卷书是写给谁的，比如我们写信，是给谁写的，是给父母，还是儿子？那这里的父母和儿子就是受书人）、写作目的（为什么写这卷书，是为了表达什么情感？还是有什么劝勉？还是为了解决什么问题？）</p>
+<h4 id="1、作者"><a href="#1、作者" class="headerlink" title="1、作者"></a>1、作者</h4><p>腓立比书的作者是保罗，保罗我们其实并不陌生，保罗是犹太人，其实他不单单有有犹太人背景，还有其他两个对保罗影响很大很重要的背景。他一共三大背景。一个是希腊背景、第二个是罗马背景、第三个就是刚才所说的犹太背景。<strong>【徒22:3】保罗说：“我原是犹太人，生在基利家的大数，长在这城里，在迦玛列门下，按着我们祖宗严紧的律法受教，热心侍奉　神，像你们众人今日一样。</strong></p>
+<h5 id="希腊背景"><a href="#希腊背景" class="headerlink" title="希腊背景"></a>希腊背景</h5><p>上面经文说到，保罗出生在基利家的大数，大数是一个希腊城市，是一个拥有一百多年的希腊文化的城市，希腊文化是当时最流行的文化，希腊文就相当于现在的英语，不能说世界通用，但至少在他们相邻的附近的很多的国家里说希腊话大家都能听得懂，所以为了圣经能够在各个国家之间流传，咱们这新约圣经的原文都是用希腊文写的。方便周围的这些国家的人都能够看得懂。而保罗在周围这些国家和地区传道的时候，希腊话也是保罗主要使用的语言。所以保罗从小就对希腊文化很了解，也很熟悉希腊这些哲学家的思想。甚至在他的讲道中都引用过希腊哲学思想家的话，比如<strong>徒17:28、林前15:33</strong>，这是他的希腊背景。</p>
+<h5 id="罗马背景"><a href="#罗马背景" class="headerlink" title="罗马背景"></a>罗马背景</h5><p>第二个就是保罗的罗马背景，他出生的城市叫大数，大数这个希腊城市后来成为了罗马一个省的首府，啥叫首府？首府可以理解为省会，相当于咱们河南的郑州。这个时候啊，罗马的高层领导就赋予了这个城市所有居民完全的罗马公民权，就是说这个城市的所有人的国籍，都变成罗马了，以后都是罗马人。在当时来说这个是非常大的福利，因为当时罗马帝国是世界上第一强国，就像现在的美国一样，每个人都挤破头想移民，想成为罗马人，但是一般人他还进不去，当不了罗马人。咱们有句话叫条条大路通罗马，这说明当时世界的中心，就是罗马。但是耶路撒冷的犹太人就没有这么幸运了，他们被罗马统治，但是他们没有罗马国籍，不是罗马人，当时的耶路撒冷就基本等于罗马的殖民地，就像近代以来我们中国，也曾经沦落为了半殖民地半封建社会，比如咱们的东北三省被日本人占领，咱们的台湾被荷兰占领，咱们的香港被英国人占领。所以说当时的耶稣撒冷的居民，是没有人权的，随随随便找个理由就能杀。但如果有罗马的国籍就不一样了，我们可以查考<strong>使徒行传22章</strong>中保罗和官长交涉的部分</p>
+<p><strong>【使徒行传 22:24-29】千夫长就吩咐将保罗带进营楼去，叫人用鞭子拷问他，要知道他们向他这样喧嚷是为什么缘故。刚用皮条捆上，保罗对旁边站着的百夫长说：“人是罗马人，又没有定罪，你们就鞭打他，有这个例吗？”百夫长听见这话，就去见千夫长，告诉他说：“你要作什么？这人是罗马人。”千夫长就来问保罗说：“你告诉我，你是罗马人吗？”保罗说：“是。”千夫长说：“我用许多银子，才入了罗马的民籍。”保罗说：“我生来就是。”于是那些要拷问保罗的人就离开他去了。千夫长既知道他是罗马人，又因为捆绑了他，也害怕了。</strong>这说明在罗马，只有拥有了罗马国籍，才会受到人的尊重。</p>
+<h5 id="犹太背景"><a href="#犹太背景" class="headerlink" title="犹太背景"></a>犹太背景</h5><p>保罗是犹太人，刚才我们查考了<strong>【徒22:3】保罗说：“我原是犹太人，生在基利家的大数，长在这城里，在迦玛列门下，按着我们祖宗严紧的律法受教，热心侍奉　神，像你们众人今日一样。</strong>保罗属于便雅悯支派，也是法利赛人，“在迦玛列门下”，这个迦玛列就是当时犹太人中最有名的拉比，拉比就是夫子，那就相当于咱们清华北大中最好的老师，教授，每一个法利赛人都想把自己的孩子送到这个老师门下，当他的徒弟，但是不是每个人都有这个资本，或者说这个条件。这也说明啥，说明保罗的家庭背景也是很有资本的，很有实力的。但难得的是，保罗并没有因为家庭富裕就像公子哥一样不学无术，游手好闲，反而刻苦学习，成绩优秀。<strong>【加拉太书 1:14】我又在犹太教中，比我本国许多同岁的人更有长进，为我祖宗的遗传更加热心。</strong>所以保罗对旧约经文是相当的熟悉，几乎称得上是精通旧约。在新约中保罗书信有13篇，一共引用旧约93次。另外，保罗对侍奉神极其热心，在保罗的生命中，他的这股热心来自对律法的热爱与尊敬。竭尽全力去维护律法，所以只要出现亵渎律法的人，保罗就认为这是在亵渎神，必须除去。所以在保罗还没有归向主的时候，咱们主耶稣的门徒去传主耶稣的道，在保罗看来，以及所有的不信主的犹太人看来，这就是严重的亵渎神的行为，因为他们不相信这个世界上会有第二位神。</p>
+<p>总结：保罗，家境富裕，热心爱神，学问高深，对旧约圣经极其熟悉。</p>
+<p>再接下来，大家应该都知道了，就是保罗在去大马士革的路上，就是去逼迫信徒的路上，被主拣选，成为主耶稣的使徒。作了外邦人的使徒。从此以后，保罗将金钱、生死都置之度外，完完全全将福音的使命放在了生命中的第一位，他广传福音，中间为主吃了很多苦，被鞭打，被下监，最后为主殉道。感谢主，保罗他本来是一个富家子弟，学问又高。但是为了主的福音事业，他放弃了世上的一切，真正的以认识耶稣基督当作至宝。真正行出了那句话，就是<strong>【腓立比书 3:8】不但如此，我也将万事当作有损的，因我以认识我主基督耶稣为至宝。我为他已经丢弃万事，看作粪土，为要得着基督</strong>，那父老弟兄姊妹们，我们可以扪心自问一下，问问我们自己，有没有真正的把我们的耶稣基督当作至宝？不管我们有没有把主当作至宝，但主是把我们当作至宝的，我们可以看保罗在去大马士革路上被主光照时的经文<strong>【使徒行传 9:3-5】扫罗行路，将到大马士革，忽然从天上发光，四面照着他。他就仆倒在地，听见有声音对他说：“扫罗，扫罗！你为什么逼迫我？”他说：“主啊，你是谁？”主说：“我就是你所逼迫的耶稣。</strong>在外人看来，扫罗没有逼迫主耶稣，保罗逼迫的是主耶稣的信徒，但是主却说，我就是你所逼迫的耶稣。其实主耶稣将信徒和自己看为一体，他看信徒就像看自己一样宝贵，我们和主是同一个身体，这同一个身体，其实也是教会。</p>
+<h4 id="2、时间地点"><a href="#2、时间地点" class="headerlink" title="2、时间地点"></a>2、时间地点</h4><p>大约在主后的62-63年，地点是罗马，是保罗在罗马被囚，被下在监里时所写的。所以腓立比书也被称为监狱书信，监狱书信一共有四封，分别是以弗所书，腓立比书，歌罗西书，腓利门书。</p>
+<h4 id="3、受书人"><a href="#3、受书人" class="headerlink" title="3、受书人"></a>3、受书人</h4><p>受书人就是写给谁的，受书人就是腓立比教会，这是保罗写给腓立比教会的一封信。腓立比教会是保罗第二次旅行布道的时候建立的教会，是保罗亲手建立的教会。保罗一共三次旅行布道。</p>
+<ol>
+<li>第一次旅行布道之后，一卷：加拉太书（约40-49 A.D.）</li>
+<li>第二次旅行布道之中，二卷：帖撒罗尼迦前、后书（约50-54 A.D.）</li>
+<li>第三次旅行布道之中，三卷：哥林多前、后书，罗马书（约50-57 A.D.）</li>
+<li>第一次被监禁，监狱书信四卷：以弗所书、腓立比书、歌罗西书、腓利门书（60-62 A.D.）</li>
+<li>被释放期间，教牧书信二卷，提摩太前书，提多书（62-66 A.D.）</li>
+<li>第二次被监禁，教牧书信一卷：提摩太后书（67 A.D.）</li>
+</ol>
+<h4 id="4、写作目的"><a href="#4、写作目的" class="headerlink" title="4、写作目的"></a>4、写作目的</h4><p>本书是保罗在被囚时所写的，特此向腓立比教会致谢，同时告诉他们即使他被囚，神的旨意也仍然能够大大得胜，并且恳切的劝勉他们，要竭力的追求认识基督，谦卑的彼此相交，得着神所赐的意外平安。</p>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>保罗是一个将福音使命贯彻到底的好仆人，他将福音的使命完完全全放在了生命中的第一位，超越了肉体的生死。虽然我们的标杆是主耶稣，但并不妨碍保罗成为我们的好榜样，不管站在仆人的角度还是信徒的角度来看，保罗都是我们的好榜样。对照保罗，我们可以看到一个好的牧者是如何牧养信徒的，看到一个好的信徒是如何履行神使命的，从这段经文也可以看到保罗心目当中所期待的腓立比信徒的样子。想象一下，如果此刻保罗就在我们这里为我们祷告了这三节经文的内容，我们该如何去在实际生活中去回应这样的祷告呢？那让我们一起来从保罗的祷告中去学习，保罗期待的信徒是什么样子。</p>
+<h2 id="一、做充满爱心的信徒【腓立比书-1-9】"><a href="#一、做充满爱心的信徒【腓立比书-1-9】" class="headerlink" title="一、做充满爱心的信徒【腓立比书 1:9】"></a>一、做充满爱心的信徒【腓立比书 1:9】</h2><h3 id="1、爱心"><a href="#1、爱心" class="headerlink" title="1、爱心"></a>1、爱心</h3><p><strong>【腓立比书 1:9】我所祷告的，就是要你们的爱心在知识和各样见识上多而又多，</strong></p>
+<p>如果把主耶稣对我们的教导归纳为一个字的话，那就是：“爱”。所有美好的品质都是“爱”所结的果子，比如包容、忍耐、怜悯、责任等等。如果我们不是出于爱，是无法真正做到这些的。而保罗在祷告当中，希望信徒做一个爱心多而又多的信徒。但是这个爱心是有要求的，不是盲目的，而是要在知识和见识上多而又多。换句话说就是我们的爱心不应该仅仅是感性的，而更应该是理性的、有辨别能力的、是合宜的，不然很容易像无头苍蝇一样做工没有果效，甚至好心办坏事。</p>
+<p>我们传福音是出于爱心，也是出于作为基督徒的福音使命。我想起来在新乡学习的时候，冯牧师说一位姨在街上传福音，那个姨扯着喉咙在街上大喊”信耶稣的上天堂，不信耶稣的下地狱”。把旁边的还有路过的人都吓得躲的远远的，好不容易碰见个人想跟人家单独说几句传福音的话，上来又跟人家来这一句，”信耶稣的上天堂，不信耶稣的下地狱”，把人家膈应的，对着她都吵，你咋不下地狱，恁全家都下地狱。说虽然这句话没错，但是这样的方式显然是不合适的，这很容易让人产生反感甚至是厌恶，更糟糕的情况是让不信的人对整个基督教都产生反感。别人不会因你的信仰而尊重你，但是一定会因为你的行为而尊重你的信仰。我们应该时刻注意自己的言行举止，因为我们代表的不仅仅是我们自己，而是我们的教会，我们的神，我们活着是为了荣耀神的，而不是让神蒙羞的。也有的人爱心泛滥，不管对象是不是异性，是不是已婚，都大发爱心，导致对方和自己都跌倒在魔鬼的试探当中，这是让人十分惋惜的。而这就需要我们在发爱心的时候，有更多的知识和见识来规范我们的爱心。</p>
+<h3 id="2、知识"><a href="#2、知识" class="headerlink" title="2、知识"></a>2、知识</h3><p>而这里的知识不是指语文数学这种知识，知识的原文意思是指对神的属灵知识，就是真理。<strong>【罗马书 1:28】他们既然故意不认识　神，　神就任凭他们存邪僻的心，行那些不合理的事；</strong>这里面的“认识”一词和<strong>【腓立比书 1:9】</strong>中的知识都是同一个词，指对神的认识。以及<strong>【歌罗西书 1:10】好叫你们行事为人对得起主，凡事蒙他喜悦，在一切善事上结果子，渐渐地多知道　神，</strong>中的“知道”在原文中都是同一个词，都指对神的认识，都是指真理。</p>
+<h3 id="3、见识"><a href="#3、见识" class="headerlink" title="3、见识"></a>3、见识</h3><p>见识，并不是指我们平常所说的见世面，见多识广，而见识原文意思指”对神的道路有深切的洞察力”，是一种分辨的能力，那这种能力是怎么来的呢？是从知识来的，是从对神的认识来的，是从真理而来的，是运用真理，是运用神的话作出正确判断、正确分辨的能力，只有我们更加认识神，明白更多的真理，才能做出更准确，更合适的判断。在这个基础之上，我们的爱心，才会得到更好的规范和指导。也能更好的避免盲目。所以只有明白更多的真理，才会有敏锐的正确的分辨的能力。简单的概括来说，保罗不仅希望腓立比信徒或者说我们单单有爱心，更要有聪明和智慧，做一个有爱心更有智慧的基督徒。</p>
+<p>因此我们传福音的时候更应该像一个医生，看这个对象是哪种“症状”，是生活没有希望？还是心灵需要安慰？是烧香拜佛走错了路？还是生活安逸却心灵空虚？根据不同的“症状”对症下药。是一起散散步聊聊天比较好？还是带点礼品去看望更合适？总之应该尽量的换位思考，尽量的了解对方的情况，用对方更容易接受的方式和态度来传福音。用合宜方式传福音，用合宜的经文传福音。</p>
+<p>其实合宜的不光是指传福音，还有很多的方面，比如话要说的合宜，箴言书上说，一句话说的合宜，好像金苹果落在银网子里。这句话是谁说的？是所罗门，是在<strong>【箴言 25:11】</strong>。可以说在地上，没有人比所罗门更有智慧了。<strong>【历代志下 1:12】我必赐你智慧聪明，也必赐你资财丰富尊荣。在你以前的列王都没有这样，在你以后也必没有这样的。”</strong>银网子也能翻译为银底座，一个金苹果放在银底座是非常的般配的，非常合适。那这句经文的意思就是，一句话，不但说话的内容要对，语气也要对；不但说话的态度要对，顺序也要对；不但说话的时机要对，场合也要对；不但要鉴察自己的动机，更要顾念对方的益处和感受。而说话不合宜的人，就像人的手里如果只有一把锤子，就会把什么都当作钉子。内容不是根据对方的需要，只是基于自己的所有；方式不是根据圣灵的感动，而是出于自己的肉体。</p>
+<p>有一位母亲，看见孩子在那玩，他目的是教育孩子好好学习，好好努力。第一种说法是：你看看天天你都弄的啥，将来考不上大学咋办？你要是考不上大学你对得起谁？我就指望了以后，咱这个家以后就靠你了。第二种说法是：你玩会儿可不要忘了学习啊，你这么聪明，只要你好好利用时间学习，那一定能考上好大学。这两种说法哪种是合宜的？是合适的，是对孩子身心发展好的？很明显是第二种，第一种说法，首先这位母亲她没有弄清楚孩子是不是已经完成了学习任务了，是不是已经学习很久了，这个脑子需要放松一下，即使孩子贪玩了，那这种说法会给孩子什么样的影响？会给孩子巨大的压力，因为从小就把整个家的重担压在孩子身上了，这还不算，会毁掉孩子的自信，让孩子自卑，因为孩子心里只会记得，我妈觉得我不好，我妈觉得我考不上，我都努力学了，我妈还觉得我不行，俺家谁家都比不上，长此以往，这孩子心理就病态的，自卑是轻的，没有心理扭曲没有跳楼自杀，就已经感谢主了。第二种说法，就会给孩子留下积极的心理暗示，他始终会觉得，虽然我做错事了，但是我妈爱我，虽然我现在没好好学，但是我只要好好学就能成功，他干啥都敢去干，干啥都有自信。万一孩子他不听好话，不把好声好气的话放心上，那再去批评，但是批评就是哪错就指出来哪错，比如作业没写完就去玩，那就批评他把作业做完了再去玩，但是不要说其他的，说什么他考不上好大学，说什么他对不起爸妈对不起谁，更不要从小就让他背负整个家的重担。只知道玩。即使将来考试了，那也更容易超常发挥。因为我们知道，考试不仅仅是对平时知识的考验，更是对心理的考验，而第一种教育方式下的孩子，心理素质不行的，压力大的，平常考试挺好，一到重大的考试就容易考砸，甚至平时都不会能考好，稍微遇到点挫折就站不来了，因为他没自信。站不起来就容易破罐破摔，其实就是颓废了。孩子的心理素质是非常重要的，<strong>【箴言 4:23】你要保守你心，胜过保守一切，因为一生的果效，是由心发出。</strong>这两种说法可能都能起到让孩子好好学习的目的，但是区别却非常大。第一种像西医，虽然见效快，但时间长了，副作用太大，弄到最后身体都吃坏了。第二种像中医，虽然见效没那么快，但是能除根，没啥副作用，还能提高孩子免疫力。自信阳光的孩子，不管是心理还是身体上都健康。</p>
+<p>再比如我们的恩赐也要是合宜的，一个人光有恩赐是没有用的，还需要准确的站在神呼召的位置上，活在神对我们的呼召里，给你一身潜水设备，是为了让你游泳潜水用的，那你就应该潜到水深之处，而不是站在沙漠里，给你一双翅膀，是让你去飞翔的，而不是躲在鸡窝里等等。</p>
+<p>西方有一句谚语，男女独处一室，就有第三者，那就是魔鬼。我们要格外的注意自己和对方的身份角色以及环境是不是合适的，是不是合乎神教导的，不给魔鬼留地步，避免让两方都陷入到罪中。比如主差遣门徒都是“两个两个地出去”这种方式，就可以很好的避免男女独处这种情况。</p>
+<p>我们要避免断章取义，尤其是在对待神的话方面。这也是我为什么在分享这三节经文前要讲本卷书的写作背景，我们只有把经文放在当时的时代去理解，才能更加原汁原味的领受神的旨意。我们不能只记得爱，也要明白神让我们怎么去爱。我们应该明白更多关于神的属灵知识，积累更多的真理，锻炼出更加敏锐准确的分辨力，运用这些知识和见识行出合宜的爱心。</p>
+<h3 id="4、爱心多而又多"><a href="#4、爱心多而又多" class="headerlink" title="4、爱心多而又多"></a>4、爱心多而又多</h3><p>然后就是爱心要多而又多，“多而又多“说明腓立比教会的爱心，本来就挺多的。腓立比教会是欧洲的第一个教会，是保罗在他的第二次布道之旅中在特罗亚经历了 “马其顿的呼声” 的异象后，来到了腓立比建立起来的。腓立比教会的第一个信徒是一个女人─卖紫色布的吕底亚 <strong>【使徒行传 16:14-15】有一个卖紫色布匹的妇人，名叫吕底亚，是推雅推喇城的人，素来敬拜　神。她听见了，主就开导她的心，叫她留心听保罗所讲的话。她和她一家既领了洗，便求我们说：“你们若以为我是真信主的，请到我家里来住。”于是强留我们。</strong>；并且这教会信道的女人特别多。这个教会富有爱心，始终保持与保罗的良好的关系，一直很支持保罗的福音事工，与保罗同心合意地兴旺福音，也一直很关心保罗，当保罗被关在罗马监狱中的时候，还派以巴弗提带上教会的赠物前往探望，并要他负责照顾保罗在狱中的生活。这说明，腓立比教会已经很有爱心了。但是保罗祷告的时候希望腓立比信徒的爱心多而又多。</p>
+<p>多而又多是不断增加的一种趋势，对于爱心来说是不设上限的，上不封顶，是没有最多只有更多。而这警醒我们，不能骄傲，不可自满于自己所做的工。<strong>【路加福音 18:11-14】法利赛人站着，自言自语地祷告说：‘　神啊，我感谢你，我不像别人勒索、不义、奸淫，也不像这个税吏。我一个礼拜禁食两次，凡我所得的，都捐上十分之一。’那税吏远远地站着，连举目望天也不敢，只捶着胸说：‘　神啊，开恩可怜我这个罪人！’我告诉你们：这人回家去比那人倒算为义了。因为，凡自高的，必降为卑；自卑的，必升为高。”</strong>不能像法利赛人的祷告一样，在神面前骄傲自满、数算自己的功劳，夺取神的荣耀。</p>
+<h3 id="5、爱心、知识、见识三者的关系"><a href="#5、爱心、知识、见识三者的关系" class="headerlink" title="5、爱心、知识、见识三者的关系"></a>5、爱心、知识、见识三者的关系</h3><p>当我们了解了爱心、知识、见识之后，那这三者间的关系又是什么样子的呢？在我们的实际信仰当中，这三者缺一不可。没有对上帝正确的认识，缺乏知识，就没有正确的见识，从而不会有正确的判断。</p>
+<p>一个人如果只有知识和见识，但是没有爱心，人就像冰山一样冷酷，没有爱心，没有怜悯，没有包容等等等等，而且极其容易骄傲。<strong>【哥林多前书 8:1】论到祭偶像之物，我们晓得我们都有知识；但知识是叫人自高自大，惟有爱心能造就人。</strong>当保罗说到吃「祭偶像之物」时，首先不是谈「知识」，而是先强调「爱心」。「知识是叫人自高自大」，指缺乏爱心的属灵「知识」，才会让人「自高自大」。因此，属灵的事情不单要根据「知识」，还应当出于「爱心」，才能荣神益人、造就弟兄。<br>「惟有爱心能造就人」。不是说只要有「爱心」就能「造就人」，而是说有了属灵的「知识」，还必须加上「爱心」才能「造就人」。神从来没有说「爱心」比「知识」更重要，却说：「我的民因无知识而灭亡。你弃掉知识，我也弃掉你」（何四6）。从神而来的「爱心」，一定是建立在真理的「知识」上：「不喜欢不义，只喜欢真理」（十三6）；而许多异端、异教，甚至许多抵挡神的人，在人看来都很有「爱心」，却弃掉了真理的「知识」，最终还是被神弃绝。</p>
+<p>如果一个人只有爱心却没有知识和见识，人就好比是无法控制的火，不知道会烧出什么样的结果。我们不要以为只要有爱心就够了，我们需要的是一种基于对上帝有正确认识并且能作出正确判断的爱心，一种由知识和见识引导的爱心。如果没有，爱心就是盲目的，冲动的，容易出问题。</p>
+<p>爱心，知识和见识互为果效。</p>
+<p>爱能激发我们渴慕认识上帝，加强对上帝的认识。倘若我们爱一个人，我们自然愿意去了解他，也渴望知道关于这个人更多的信息。（谈恋爱的时候想方设法的想知道对方爱吃啥、颜色、衣服、口味等等）那么倘若我们说我们爱神的话，那么自然，也激发我们去了解上帝的事情，明白关于他的道理。对神的认识越多，也增强我们的属灵能力，当我们的属灵能力越敏锐，就会做出正确的判断，这个时候，爱心的果效就生发出来。这个爱心的果效又会激发有更多的爱心。——爱心、知识、见识是一个反复循环的过程（爱心促进知识、知识促进见识、见识又促进爱心），也是我们生命所需要的，因而保罗告诉我们要在这三方面多而又多。</p>
+<h2 id="二、做明辨是非的信徒【腓立比书-1-10】"><a href="#二、做明辨是非的信徒【腓立比书-1-10】" class="headerlink" title="二、做明辨是非的信徒【腓立比书 1:10】"></a>二、做明辨是非的信徒【腓立比书 1:10】</h2><p><strong>【腓立比书 1:10】使你们能分别是非，作诚实无过的人，直到基督的日子；</strong></p>
+<p>这节的祷告可以看出，保罗有两个目的。一个是能分别是非，一个是作诚实无过的人。</p>
+<h3 id="1、分别是非"><a href="#1、分别是非" class="headerlink" title="1、分别是非"></a>1、分别是非</h3><p>分别是非并不是简简单单的分辨好与坏，在我们圣经上这段经文后面有一个括号，分别是非又作喜爱那美好的事。“美好的事”指的就是“更重要的事”，分别是非的原文意思就是“试验和证明什么是更好的事”。这也意味着我们要做选择，比如我们在做一件事的时候，哪种做法是最好的，哪种是第二好，哪种是第三好等等，在“最好、第二好、第三好、第四好”等等中选择出对一件事最好的反应方式，这比从简单的好与坏中作选择更难。</p>
+<p>比如对于爱心来说，我们发爱心帮助了一个人，如果我们发爱心的动机是主的教导，而事后也充满了对神的赞美和感恩，发自肺腑的把荣耀归于神，那就是最好的。但是如果我们事后把主抛在了脑后，却认为自己是多么好多么善良，那显然这是次好的。最好的侍奉需要在神面前低头，在神面前谦卑，而次好的侍奉只专注于人前的风光。因为我们在地上所做的一切，若经不起基督台前的试验，无论是多么热闹多么受欢迎受追捧，都是毫无价值的。<strong>【哥林多前书 3:12-15】若有人用金、银、宝石、草木、禾秸在这根基上建造，各人的工程必然显露，因为那日子要将它表明出来，有火发现，这火要试验各人的工程怎样。人在那根基上所建造的工程若存得住，他就要得赏赐；人的工程若被烧了，他就要受亏损，自己却要得救。虽然得救，乃像从火里经过的一样。</strong></p>
+<p>选择出最好的反应方式，所依赖的就是<strong>【腓立比书 1:9】</strong>中所说的爱心、知识和见识。也就是说只有我们对神的认识足够多，才能在众多的选择当中判断出最好的回应方式。所以第九节和第十节经文应该是递进关系。</p>
+<h3 id="2、诚实无过"><a href="#2、诚实无过" class="headerlink" title="2、诚实无过"></a>2、诚实无过</h3><p>第二个目的，作诚实无过的人。并不是要我们以后都不犯罪，人非耶稣，孰能无过呢。“诚实”的原文意思是真挚的、纯净的。该词的希腊文<strong>eilikrineis</strong>由“太阳”以及“审判”两个词合成，其意为经过阳光测试过的纯净度。是指日光之下的考验，基督徒的言行和品格是经得住考验的，是能够拿到上帝的真光中考验的。另一个指不断地旋转，好像用筛子筛，最后把渣滓过滤掉，留下好的——我们的生命也应该是将一切邪恶的、不讨上帝喜悦的杂质去除掉。</p>
+<p>无过就是不但追求自己没有过失，自己不跌落在陷阱中，也不要使别人落入罪恶的试探。有时候我们会不经意绊倒别人，说了不该说的话，做了不该做的事情。有的弟兄姊妹很热心，也有爱心，但是真的缺乏正确的方式，比如有些弟兄姊妹传福音让人看了神神叨叨的，让没有信主的人害怕，其实这也是一种绊倒人。基督徒要显出自己的爱心和温柔，过着令人羡慕的充满平安、喜乐的基督徒生活，而不是过让人不能理解、无法接受的生活。</p>
+<p>我们没有办法去保证自己从今以后不犯错，也不能保证不绊倒别人。那怎么办呢？主还教导了我们另外一句话<strong>【彼得前书 4:8】最要紧的是彼此切实相爱，因为爱能遮掩许多的罪。</strong>，当我们彼此相爱，彼此包容，彼此饶恕的时候，就把我们的罪遮掩了，<strong>【马太福音 6:14】“你们饶恕人的过犯，你们的天父也必饶恕你们的过犯；</strong>其实唯一的办法，还是彼此相爱。爱是什么？<strong>【哥林多前书 13:4-8b】爱是恒久忍耐，又有恩慈；爱是不嫉妒，爱是不自夸，不张狂，不作害羞的事，不求自己的益处，不轻易发怒，不计算人的恶，不喜欢不义，只喜欢真理；凡事包容，凡事相信，凡事盼望，凡事忍耐。爱是永不止息。</strong>这里面罗列了爱的种种表现，其中我们最常挂在嘴边的就是，爱是包容，爱是忍耐。有句话说，“看一个人是不是真的爱你，不是看他平时对你有多好，而是看他生气的时候对你有多差”，可以仔细品品这句话，其实说的就是包容和忍耐。</p>
+<h3 id="3、直到基督的日子"><a href="#3、直到基督的日子" class="headerlink" title="3、直到基督的日子"></a>3、直到基督的日子</h3><p>然而，保罗还给诚实无过加了一个期限——直到基督的日子。他希望腓立比信徒永远都去作诚实无过的人，没有人知道基督再来是什么日子，腓立比信徒不知道，保罗不知道，只有父知道。我有时候就会想，主啊万一你来的时候，我正在发怒，正在吵架，或者正在犯其他的罪，或者身上还有罪没有认干净，那我可咋得救啊，你还不如把你第二次来的时间告诉我，我提前十分钟把罪认清认干净。那我们有没有想过为什么神不把他二次再来的时间告诉我们？是神不够爱我们吗？是神不想更多的人得救吗？不，不是的，这看似是神不够爱我们，其实是为了我们好。为什么这么说？我们以前上班或者开会，那不管这个时间调整到几点，总有人踩着点来，总有人迟到。七点半上班，迟到人太多了，八点上班，还是有人迟到，九点上班，还是有人迟到。所以，迟到的责任不在于时间，而在于人。如果主告诉我们他什么时候来，比如他在圣经上写，再来的日子是明年的五月一号，那我们被魔鬼引诱的时候，魔鬼会咋说，他会说不碍事，你的主来还早了，你现在犯罪不碍事，你定个闹钟，主再来头里五分钟你抓紧认认罪都妥了。人都是软弱的，如果我们知道主再来的时间，我们会更加的软弱。更胜不过魔鬼的引诱。那主比我们更了解我们自己，所以他不告诉我们啥时候再来，正是爱我们，让我们时时刻刻都警醒，尽量少去犯罪，我们虽然有圣徒的名分，有神儿女的名分，但是我们的行为往往却配不上圣徒这两个字。所以我们不但要追求地位上的圣洁，更要追求行为上的圣洁，不能德不配位。时时刻刻警惕罪，重视罪，每次来到神面前的时候都求主洁净我们，将我们分别为圣。因为时间隔绝不了神的爱，距离也隔绝不了神的爱，唯有罪，能隔绝我们和神的爱。</p>
+<h2 id="三、做结满仁义果子的信徒【腓立比书-1-11】"><a href="#三、做结满仁义果子的信徒【腓立比书-1-11】" class="headerlink" title="三、做结满仁义果子的信徒【腓立比书 1:11】"></a>三、做结满仁义果子的信徒【腓立比书 1:11】</h2><p>果子，是一棵树的精华，是一棵果树汲取了长时间的营养后显化在外的成果。是让人直接看得到的。果子越多越饱满，树的主人就越喜欢。保罗说，我们要靠着耶稣基督结仁义的果子，而且要结满，叫荣耀称赞归于神。</p>
+<h3 id="1、倚靠主耶稣结果子"><a href="#1、倚靠主耶稣结果子" class="headerlink" title="1、倚靠主耶稣结果子"></a>1、倚靠主耶稣结果子</h3><p>很明显这是一个比喻，圣经中多处用到了果子的比喻。我们常提到的<strong>【约翰福音 15:1-8】【约15:1】“我是真葡萄树，我父是栽培的人。【约15:2】凡属我不结果子的枝子，他就剪去；凡结果子的，他就修理干净，使枝子结果子更多。【约15:3】现在你们因我讲给你们的道，已经干净了。【约15:4】你们要常在我里面，我也常在你们里面。枝子若不常在葡萄树上，自己就不能结果子；你们若不常在我里面，也是这样。【约15:5】我是葡萄树，你们是枝子；常在我里面的，我也常在他里面，这人就多结果子；因为离了我，你们就不能作什么。【约15:6】人若不常在我里面，就像枝子丢在外面枯干，人拾起来，扔在火里烧了。【约15:7】你们若常在我里面，我的话也常在你们里面；凡你们所愿意的，祈求就给你们成就。【约15:8】你们多结果子，我父就因此得荣耀，你们也就是我的门徒了。</strong>说的非常的清楚，主耶稣是真葡萄树，父是栽培的人，而我们是葡萄树上的枝子。因为葡萄枝子没有根，所以吸收养分要倚靠葡萄树，就是倚靠主耶稣基督，养分就是主的话。想要多结果子不但要多明白主的话，更重要的是要将主的话转化成外在的、肉眼可见的行为。也就是说不但要多听道，更要多行道，行出的道越多，就等于结出的果子越多，果子越多就越荣耀父神。就如<strong>【雅各书 1:22】只是你们要行道，不要单单听道，自己欺哄自己。</strong>对于听道不行道的信徒，就是自欺欺人了。枝子长得再粗壮叶子长得再大，但是不结果子，也仅仅是浪费生命，影响结果子，会被神剪去。</p>
+<h3 id="2、仁义的果子"><a href="#2、仁义的果子" class="headerlink" title="2、仁义的果子"></a>2、仁义的果子</h3><p>什么是仁义的果子？一是来自于上帝的公义，二是基督的义。不论理解为是上帝的公义或是耶稣基督里的义，都是指我们的生活方式要选取上帝所喜悦的方式。想要结出果子，唯有靠耶稣基督这棵有着丰盛的、活泼的生命的葡萄树。我们与祂连接，就让义充满了我们，因耶稣基督的救赎，就可以结出这仁义的果子。所以仁义的果子并不是指仁义这一种美德，而是指靠着主耶稣基督而来的，所有美好品德外在显化的行为。</p>
+<p>并不是结出一些仁义的果子就可以，而是要结满。<strong>【哥林多后书 9:10-11】那赐种给撒种的，赐粮给人吃的，必多多加给你们种地的种子，又增添你们仁义的果子，叫你们凡事富足，可以多多施舍，就藉着我们使感谢归于　神。</strong>从这节经文我们可以知道，仁义的果子越多，从上帝承受的祝福也会越多，也就可以再结出更多仁义的果子，这是良性的循环。</p>
+<h3 id="3、荣耀归于父神"><a href="#3、荣耀归于父神" class="headerlink" title="3、荣耀归于父神"></a>3、荣耀归于父神</h3><p>当我们结出许多仁义的果子的时候，这本身就是“叫荣耀称赞归于神”的生活。而我们应该时刻警惕的是，周围人因为我们结出仁义果子而投来的赞许目光，或者是表扬，甚至是吹捧。其实还是要警惕骄傲二字，<strong>【约翰一书 2:16】因为凡世界上的事，就像肉体的情欲，眼目的情欲，并今生的骄傲，都不是从父来的，乃是从世界来的。</strong>我们要时刻知道，仁义的果子是荣耀神的，而不是荣耀自我的。我们结果子所有的养分都是倚靠主耶稣基督而来的，我们要像<strong>【腓立比书 1:10】</strong>提到的，作分别是非的人，选择在神面前低头的最好的侍奉，而非荣耀自己的次好的侍奉。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>保罗祷告的最终目的，是要我们结满仁义的果子。而结满仁义的果子离不开知识和见识上的爱心，必须知识、见识、爱心三方面齐头并进——更多认识神，更有爱心；能明辨是非——选择在神面前谦卑的最好的侍奉；作诚实无过的人——作真诚且彼此相爱的人，自然就结出仁义的果子。在我们的生活之中，不要盲目冲动的做事，要结合圣经一贯的教导，藉着祷告仰望给上帝，圣灵必引导我们做出正确的判断，然后顺服神的引领，行神所喜悦的事情，这是结出仁义的果子的惟一途径。</p>
+<p>愿我们所有的弟兄姊妹都能倚靠主耶稣基督的话语，在基督里共同长进，结满仁义的果子，并将所有的荣耀和颂赞归于我们的父神。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">John Doe</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://qinyunkai.github.io/2024/051639718.html">http://qinyunkai.github.io/2024/051639718.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">John Doe</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Jesus/">
+                                    <span class="chip bg-color">Jesus</span>
+                                </a>
+                            
+                                <a href="/tags/sermons/">
+                                    <span class="chip bg-color">sermons</span>
+                                </a>
+                            
+                                <a href="/tags/Paul/">
+                                    <span class="chip bg-color">Paul</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/051639718.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="temp">
+                        
+                        <span class="card-title">temp</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            John Doe
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Jesus/">
+                        <span class="chip bg-color">Jesus</span>
+                    </a>
+                    
+                    <a href="/tags/sermons/">
+                        <span class="chip bg-color">sermons</span>
+                    </a>
+                    
+                    <a href="/tags/Paul/">
+                        <span class="chip bg-color">Paul</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/051616107.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            John Doe
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2024</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">John Doe</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
